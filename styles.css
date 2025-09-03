@@ -49,7 +49,7 @@ header h1 {
 .exercise-item {
   background-color: #1e1e1e;
   border-radius: 12px;
-  padding: 20px;
+  padding: 15px;
   box-shadow: 0 2px 6px rgba(255, 255, 255, 0.1);
   cursor: pointer;
   border: 2px solid transparent;
@@ -72,51 +72,59 @@ header h1 {
   border-color: #dc2626;
 }
 
-.exercise-item h3 {
+/* Summary compacte (carte fermée) */
+.exercise-summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.exercise-summary h3 {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+.exercise-summary .status {
   font-size: 1.2rem;
   font-weight: bold;
-  margin-bottom: 8px;
+  min-width: 20px;
+  text-align: center;
 }
 
-.exercise-item .description {
-  font-size: 0.9rem;
-  color: #9ca3af;
-  margin-bottom: 8px;
-}
-
-.exercise-item .goal {
-  font-size: 0.9rem;
-  margin-bottom: 8px;
-}
-
-/* Status */
-.status {
-  font-size: 0.9rem;
-  font-weight: bold;
-  margin-top: 8px;
-}
-
-.status.completed {
+.exercise-summary .status.completed {
   color: #16a34a;
 }
 
-.status.failed {
+.exercise-summary .status.failed {
   color: #dc2626;
 }
 
-.status.pending {
+.exercise-summary .status.pending {
   color: #9ca3af;
 }
 
-/* Détails d'exercice */
+/* Détails d'exercice (carte ouverte) */
 .exercise-details {
   border-top: 1px solid #333;
-  padding-top: 20px;
-  margin-top: 20px;
+  padding-top: 15px;
+  margin-top: 15px;
 }
 
 .exercise-details.hidden {
   display: none;
+}
+
+.exercise-details .description {
+  font-size: 0.9rem;
+  color: #9ca3af;
+  margin-bottom: 10px;
+}
+
+.exercise-details .goal {
+  font-size: 0.9rem;
+  margin-bottom: 15px;
+  font-weight: 500;
 }
 
 /* Timer */
@@ -226,7 +234,15 @@ input[type="number"]:focus {
   }
   
   .exercise-item {
-    padding: 15px;
+    padding: 12px;
+  }
+  
+  .exercise-summary h3 {
+    font-size: 1rem;
+  }
+  
+  .exercise-summary .status {
+    font-size: 1.1rem;
   }
   
   .timer {

@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Simulateur d'adaptation - Sport</title>
+  <style>
+    body{background:#121212;color:#fff;font-family:Arial,Helvetica,sans-serif;padding:20px}
+    button{padding:10px 12px;margin:6px;border-radius:6px;border:0;background:#4a4a4a;color:#fff;cursor:pointer}
+    pre{background:#0f1720;padding:12px;border-radius:8px;overflow:auto;max-height:60vh}
+    .controls{margin-bottom:12px}
+    label{display:block;margin-top:8px}
+    input[type=number]{width:80px;padding:6px}
+  </style>
+</head>
+<body>
+  <h1>Simulateur d'algorithme d'adaptation</h1>
+  <p>Ce simulateur exécute des scénarios (succès/échec) pour voir comment change le <strong>goal</strong>.</p>
+
+  <div class="controls">
+    <button id="run-success">Scénario : succès répétés</button>
+    <button id="run-fail">Scénario : échecs répétés</button>
+    <button id="run-mix">Scénario : mixte</button>
+    <button id="run-custom">Exécuter scénario personnalisé</button>
+    <label>Goal initial: <input id="initial-goal" type="number" value="10" min="1"/></label>
+    <label>N tentatives (window): <input id="window-n" type="number" value="6" min="1"/></label>
+  </div>
+
+  <pre id="output">Prêt. Choisissez un scénario.</pre>
+
+  <script src="simulator.js"></script>
+</body>
+</html>
